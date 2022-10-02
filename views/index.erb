@@ -1,0 +1,15 @@
+<table>
+  <% @files.each do |file| %>
+    <tr>
+      <td>
+      <a href="/files/<%= file %>"><%= file %></a>
+      <td>
+      <a href="/files/<%= file %>/edit"><button>Edit</button></a>
+      <td>
+      <form action="/delete?file=<%= file %>" method="post">
+        <input type="submit" value="Delete"></input>
+      </form>
+    </tr>
+  <% end %>
+</table>
+<a href="/new">Create New Document</a>
